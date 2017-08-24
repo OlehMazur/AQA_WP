@@ -13,7 +13,7 @@ public class MenuSelector {
 
         Driver.Instance.findElement(By.id(topLevelMenuId)).click();
 
-        WebDriverWait wait = new WebDriverWait(Driver.Instance, 10);
+        WebDriverWait wait = new WebDriverWait(Driver.Instance, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(subMenuLinkText)));
 
         Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
