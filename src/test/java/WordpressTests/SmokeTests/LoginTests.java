@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 /**
  * Created by oleh on 19.08.17.
  */
-public class LoginTest extends WordPressTest {
+public class LoginTests extends WordPressTest {
 
     @Test
     public void Admin_User_Can_Login() {
