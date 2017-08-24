@@ -4,6 +4,7 @@ package WordpressAutomation.Pages;
 import WordpressAutomation.Selenium.Driver;
 import WordpressAutomation.Navigation.LeftNavigation;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import java.util.List;
 
@@ -59,14 +60,18 @@ public class NewPostPage {
 
         public void Publish() throws Exception{
 
-            Driver.Instance.findElement(By.id("title")).sendKeys(title);
-            Driver.Instance.findElement(By.id("content-tmce")).click();
-            Driver.Instance.switchTo().frame("content_ifr");
-            Driver.Instance.switchTo().activeElement().sendKeys(body);
-            Driver.Instance.switchTo().defaultContent();
+            try {
+                Driver.Instance.findElement(By.id("title")).sendKeys(title);
+                Driver.Instance.findElement(By.id("content-tmce")).click();
+                Driver.Instance.switchTo().frame("content_ifr");
+                Driver.Instance.switchTo().activeElement().sendKeys(body);
+                Driver.Instance.switchTo().defaultContent();
 
-            Driver.Wait(1);
-            Driver.Instance.findElement(By.id("publish")).click();
+                Driver.Wait(1);
+                Driver.Instance.findElement(By.id("publish")).click();
+            }
+            catch (NoSuchElementException ex)
+            {}
         }
     }
 
