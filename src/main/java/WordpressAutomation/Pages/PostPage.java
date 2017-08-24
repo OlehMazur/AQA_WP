@@ -2,6 +2,7 @@ package WordpressAutomation.Pages;
 
 import WordpressAutomation.Selenium.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 /**
@@ -11,10 +12,15 @@ public class PostPage {
 
     public static String getTitle() {
 
-        WebElement title = Driver.Instance.findElement(By.className("entry-title"));
-        if (title != null)
-            return  title.getText();
+        try {
+            WebElement title = Driver.Instance.findElement(By.className("entry-title"));
+            if (title != null)
+                return title.getText();
 
+
+        }
+        catch (NoSuchElementException ex)
+        {}
         return "";
 
     }
