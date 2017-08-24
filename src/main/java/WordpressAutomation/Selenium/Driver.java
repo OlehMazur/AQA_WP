@@ -1,6 +1,8 @@
 package WordpressAutomation.Selenium;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Action;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Driver {
 
-    public static FirefoxDriver Instance;
+    public static WebDriver Instance;
     public static String BaseAddress;
 
     public static String getBaseAddress() {
@@ -18,9 +20,13 @@ public class Driver {
     }
 
     public static void Initialize() {
-        System.setProperty("webdriver.gecko.driver", "C:\\home\\oleh\\TOOLS\\geckodriver.exe");
+
+        System.setProperty("webdriver.chrome.driver", "/home/oleh/TOOLS/chromedriver");
+        //System.setProperty("webdriver.gecko.driver", "/home/oleh/TOOLS/geckodriver");
+        //"C:\\home\\oleh\\TOOLS\\geckodriver.exe"
         //"/home/oleh/TOOLS/geckodriver"
-        Instance = new FirefoxDriver();
+        Instance = new ChromeDriver();
+                //new FirefoxDriver();
         Instance.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
