@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Created by oleh on 22.08.17.
  */
-public class AllPostsTest extends WordPressTest {
+public class AllPostsTests extends WordPressTest {
 
     @Test
     public void Added_Posts_Show_Up() throws Exception{

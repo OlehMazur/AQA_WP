@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class CreatePostTests extends WordPressTest {
+public class CreatePostTest extends WordPressTest {
 
     @Test
     public void Can_Create_A_Basic_Post() throws  Exception {
