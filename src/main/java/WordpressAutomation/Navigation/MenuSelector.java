@@ -9,13 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Created by oleh on 22.08.17.
  */
 public class MenuSelector {
-    public static void Select(String topLevelMenuId, String subMenuLinkText) {
+    public static void Select(String topLevelMenuId, String subMenuLinkText) throws  Exception{
 
 
 
         Driver.Instance.findElement(By.id(topLevelMenuId)).click();
-        WebDriverWait wait = new WebDriverWait(Driver.Instance, 30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("wp-submenu wp-submenu-wrap")));
+        Thread.sleep(7000);
 
         Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
     }
