@@ -11,10 +11,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MenuSelector {
     public static void Select(String topLevelMenuId, String subMenuLinkText) {
 
-        WebDriverWait wait = new WebDriverWait(Driver.Instance, 30);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(topLevelMenuId)));
+
 
         Driver.Instance.findElement(By.id(topLevelMenuId)).click();
+        WebDriverWait wait = new WebDriverWait(Driver.Instance, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("wp-submenu wp-submenu-wrap")));
 
         Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
     }
