@@ -12,15 +12,9 @@ public class PostPage {
 
     public static String getTitle() {
 
-        try {
             WebElement title = Driver.Instance.findElement(By.className("entry-title"));
             if (title != null)
                 return title.getText();
-
-
-        }
-        catch (NoSuchElementException ex)
-        {}
         return "";
 
     }

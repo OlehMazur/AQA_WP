@@ -21,13 +21,10 @@ public class NewPostPage {
     }
 
     public static void GoToNewPost() {
-        try {
+
             WebElement message = Driver.Instance.findElement(By.id("message"));
             WebElement newPostlink = message.findElements(By.tagName("a")).get(0);
             newPostlink.click();
-        }
-        catch (NoSuchElementException ex)
-        {}
 
     }
 
@@ -64,7 +61,7 @@ public class NewPostPage {
 
         public void Publish() throws Exception{
 
-            try {
+
                 Driver.Instance.findElement(By.id("title")).sendKeys(title);
                 Driver.Instance.findElement(By.id("content-tmce")).click();
                 Driver.Instance.switchTo().frame("content_ifr");
@@ -73,9 +70,7 @@ public class NewPostPage {
 
                 Driver.Wait(1);
                 Driver.Instance.findElement(By.id("publish")).click();
-            }
-            catch (NoSuchElementException ex)
-            {}
+
         }
     }
 
