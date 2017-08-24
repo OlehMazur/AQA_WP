@@ -8,6 +8,10 @@
     <artifactId>wordpress_aqa</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <project.build.sourseEncoding>UTF8</project.build.sourseEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

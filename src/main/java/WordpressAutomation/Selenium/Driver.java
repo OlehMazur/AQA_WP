@@ -21,12 +21,11 @@ public class Driver {
 
     public static void Initialize() {
 
-        System.setProperty("webdriver.chrome.driver", "/home/oleh/TOOLS/chromedriver");
-        //System.setProperty("webdriver.gecko.driver", "/home/oleh/TOOLS/geckodriver");
-        //"C:\\home\\oleh\\TOOLS\\geckodriver.exe"
-        //"/home/oleh/TOOLS/geckodriver"
-        Instance = new ChromeDriver();
-                //new FirefoxDriver();
+        //System.setProperty("webdriver.chrome.driver", "/home/oleh/TOOLS/chromedriver");
+        System.setProperty("webdriver.gecko.driver", "/home/oleh/TOOLS/geckodriver");
+
+        Instance = new FirefoxDriver();
+
         Instance.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
