@@ -15,13 +15,11 @@ public class MenuSelector {
 
 
         Driver.Instance.findElement(By.id(topLevelMenuId)).click();
+        WebDriverWait wait = new WebDriverWait(Driver.Instance, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"menu-posts\"]")));
 
-        try {
-            Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
-        }
-        catch (ElementNotInteractableException ex)
-        {
+        Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
 
-        }
+
     }
 }
