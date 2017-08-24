@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MenuSelector {
     public static void Select(String topLevelMenuId, String subMenuLinkText) {
 
-        Driver.Instance.findElement(By.id(topLevelMenuId)).click();
+        WebDriverWait wait = new WebDriverWait(Driver.Instance, 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(topLevelMenuId)));
 
-        WebDriverWait wait = new WebDriverWait(Driver.Instance, 60);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(subMenuLinkText)));
+        Driver.Instance.findElement(By.id(topLevelMenuId)).click();
 
         Driver.Instance.findElement(By.linkText(subMenuLinkText)).click();
     }
