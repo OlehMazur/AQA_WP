@@ -21,9 +21,13 @@ public class NewPostPage {
     }
 
     public static void GoToNewPost() {
-        WebElement message = Driver.Instance.findElement(By.id("message"));
-        WebElement newPostlink = message.findElements(By.tagName("a")).get(0);
-        newPostlink.click();
+        try {
+            WebElement message = Driver.Instance.findElement(By.id("message"));
+            WebElement newPostlink = message.findElements(By.tagName("a")).get(0);
+            newPostlink.click();
+        }
+        catch (NoSuchElementException ex)
+        {}
 
     }
 
